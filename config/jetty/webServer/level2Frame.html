@@ -1,0 +1,42 @@
+<html>
+<title>sina level2 control frame</title>
+<script src="/file?jquery.js"></script>
+<style>
+	iframe{width:95%; height:100%; border:1px solid}
+</style>
+<body>
+	<script>
+		var zixuan = 'http://i.finance.sina.com.cn/zixuan,stock';
+		var dfmz = 'http://stock.finance.sina.com.cn/lv2/sh600637.html';
+	</script>
+	<div>
+		<div>
+			<div style="height:100px">controller:</div>
+		</div>
+		<div id = 'frm' style='width:100%;height:100%; background-color: #f3f3f3 '>
+			<div id='zixuan_div' style='width:70%;height:100%;   float:left'>
+				<iframe id='zixuan'></iframe></div>
+			<div id='current_div' style='width:30%;height:100%;  float:left' >
+				<iframe id='current' src='https://current.sina.com.cn/?_t=ms1492796424771'></iframe></div>
+		</div>
+	</div>
+	<script>
+	$('#zixuan').attr('src', zixuan)
+	var jump=function(){
+		$('#zixuan').attr('src', dfmz);
+	}
+	setTimeout(jump, 2000)
+	var clientIp = "";
+/**	$.get(
+			"http://ff.sinajs.cn/?list=sys_clientip",
+			"",
+			function(data){
+				var ret = data;
+				console.log("serverRet: " + serverRet);
+		    }, 
+		    "text");
+	**/
+	</script>
+</body>
+
+</html>
